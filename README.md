@@ -35,11 +35,15 @@ docker-exec() {
 docker-run --platform linux/arm/v7 --name openhd debian:bullseye-slim
 
 docker context ls
+
 docker buildx ls
+
 docker buildx inspect
 
 apt update
+
 apt install sudo
+
 apt install git
 
 git config --global --add safe.directory /work
