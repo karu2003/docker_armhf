@@ -1,5 +1,6 @@
 # chroot
 image for chrooot
+
 sudo dd bs=4M if=/dev/sda of=bpim2z.img status=progress
 
 # ~/.bashrc
@@ -47,12 +48,17 @@ apt install sudo
 apt install git
 
 git config --global --add safe.directory /work
+
 git config --global --add safe.directory /work/OpenHD/lib/mavlink-headers
+
 git config --global --add safe.directory /work/OpenHD/lib/wifibroadcast
+
 git config --global --add safe.directory /work/OpenHD/ohd_common/lib/json
+
 git config --global --add safe.directory /work/OpenHD/ohd_common/lib/spdlog
 
 git submodule init
+
 git submodule update
 
 git submodule update --init --recursive
@@ -60,4 +66,5 @@ git submodule update --init --recursive
 git submodule foreach 'git fetch origin; git checkout $(git rev-parse --abbrev-ref HEAD); git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); git submodule update --recursive; git clean -dfx'
 
 ./package.sh armhf raspbian && su andrew -Pc "scp openhd pi@192.168.3.97:/home/pi"
+
 file openhd
