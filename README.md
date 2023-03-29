@@ -3,6 +3,10 @@ image for chrooot
 
 sudo dd bs=4M if=/dev/sda of=bpim2z.img status=progress
 
+# docker install 
+
+https://docs.docker.com/engine/install/ubuntu/
+
 # ~/.bashrc
 
 docker-run() {
