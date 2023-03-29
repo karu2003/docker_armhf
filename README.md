@@ -67,4 +67,7 @@ git submodule foreach 'git fetch origin; git checkout $(git rev-parse --abbrev-r
 
 ./package.sh armhf raspbian && su andrew -Pc "scp openhd pi@192.168.3.97:/home/pi"
 
+ssh -oHostKeyAlgorithms=+ssh-dss pi@192.168.3.97
+scp -oHostKeyAlgorithms=+ssh-dss openhd pi@192.168.3.97:/home/pi/.
+
 file openhd
