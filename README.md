@@ -9,7 +9,7 @@ do not install from Ubuntu’s standard repository
 
 https://docs.docker.com/engine/install/ubuntu/
 
-docker buildx create --name pArmhf --bootstrap --use
+docker buildx create --name platform_armhf --bootstrap --use
 
 docker buildx inspect
 
