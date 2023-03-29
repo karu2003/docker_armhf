@@ -9,6 +9,10 @@ do not install from Ubuntu’s standard repository
 
 https://docs.docker.com/engine/install/ubuntu/
 
+docker buildx create --name pArmhf --bootstrap --use
+docker buildx inspect
+docker buildx build --platform linux/arm/v7
+
 # ~/.bashrc
 
 docker-run() {
