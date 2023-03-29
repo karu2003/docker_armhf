@@ -13,7 +13,7 @@ docker buildx create --name platform_armhf --bootstrap --use
 
 docker buildx inspect
 
-docker buildx build --platform linux/arm/v7
+docker buildx build --platform linux/arm/v7 .
 
 # ~/.bashrc
 
