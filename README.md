@@ -19,6 +19,7 @@ docker buildx build --platform linux/arm/v7 .
 
 docker-run() {
     docker run --rm -it \
+        -v /dev:/dev \
         -v $PWD:/work \
         -v /etc/localtime:/etc/localtime:ro \
         -v $HOME/.ssh:/root/.ssh \
@@ -35,6 +36,7 @@ docker-run() {
         -v /dev/dri/renderD128:/dev/dri/renderD128 \
         -v /dev/dri/card0:/dev/dri/card0 \
         -w /work \
+        --privileged=true \
         --security-opt seccomp:unconfined $@
 }
 #--user 1000:1000 \
