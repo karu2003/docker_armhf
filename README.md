@@ -94,13 +94,17 @@ https://sourceforge.net/projects/raspberry-pi-cross-compilers/files/Raspberry%20
 wget -O cross-gcc-10.3.0-pi_0-1.tar.gz https://sourceforge.net/projects/raspberry-pi-cross-compilers/files/Raspberry%20Pi%20GCC%20Cross-Compiler%20Toolchains/Bullseye/GCC%2010.3.0/Raspberry%20Pi%201%2C%20Zero/cross-gcc-10.3.0-pi_0-1.tar.gz/download
 
 mkdir ~/opt
+
 tar -xf cross-gcc-10.3.0-pi_0-1.tar.gz -C ~/opt
 
 export PATH="$HOME/opt/cross-pi-gcc-10.3.0-0/bin:$PATH"
 
 ./waf list_boards
+
 ./waf clean
+
 ./waf configure --board=canzero --static
+
 ./waf build
 
 scp build/canzero/bin/ardurover pi@arduboot:~/
